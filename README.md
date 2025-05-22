@@ -39,6 +39,13 @@ Ao usar esta ferramenta, você concorda que é o único responsável por suas a�
 ### Pacote necessário:
 - `aircrack-ng`
 
+### Lista de palavras necessária
+Recomendo o uso da lista rockyou.txt muito famosa e completa, está disponível por defeito no kali linux mas podem fazer o download dela apartir deste website 
+
+https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt
+
+Para que funcione coloquem essa lista dentro da pasta onde estiver o script
+
 O script tenta a instalação automática via `yay`. Se isso falhar, instale manualmente:
 
 ```bash
