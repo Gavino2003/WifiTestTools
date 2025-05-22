@@ -1,99 +1,82 @@
-\# WifiTestTool
+# WifiTestTool
 
-\_\_\_\_ \_\_ \_\_\_\_ \_\_ \_\_\_\_\_\_\_ \_\_ .\_\_\_\_\_\_\_\_\_\_\_. \_\_\_\_\_\_ \_\_\_\_\_\_ \_\_ \_\_\_\_\_\_\_.
+**Desenvolvido por Vasco Gavino**
 
-\\ \\ / \\ / / | | | \_\_\_\_|| | | | / \_\_ \\ / \_\_ \\ | | / |
+---
 
-\\ \\/ \\/ / | | | |\_\_ | | \`---| |----\`| | | | | | | | | | | (----\`
+## 📜 Aviso Legal / Isenção de Responsabilidade
 
-\\ / | | | \_\_| | | | | | | | | | | | | | | \\ \\
+**WifiTestTool** destina-se estritamente a:
+- Fins educacionais
+- Testes em redes de sua propriedade
+- Testes em redes com permissão explícita
 
-\\ /\\ / | | | | | | | | | \`--' | | \`--' | | \`----.----) |
+🚨 **O uso não autorizado** desta ferramenta em redes ou dispositivos sem consentimento é:
+- Ilegal
+- Antiético
 
-\\\_\_/ \\\_\_/ |\_\_| |\_\_| |\_\_| |\_\_| \\\_\_\_\_\_\_/ \\\_\_\_\_\_\_/ |\_\_\_\_\_\_\_|\_\_\_\_\_\_\_/
+**O autor e os colaboradores não assumem qualquer responsabilidade por qualquer uso indevido deste software.**
+Ao usar esta ferramenta, você concorda que é o único responsável por suas ações.
 
-Developed by Vasco Gavino
+---
 
-\---
+## 🔍 Visão geral
 
-\## Legal Notice / Disclaimer
+**WifiTestTool** é um script Bash que automatiza partes do Wi-Fi WPA2:
+- Processo de captura de handshake
+- Processo de cracking
 
-\*\*WifiTestTool\*\* is intended strictly for educational purposes and testing on networks you own or have explicit permission to test.
+🔧 **Pilha técnica**: Utiliza o pacote `aircrack-ng`
 
-Unauthorized use of this tool against networks or devices without consent is illegal and unethical.
+🎯 **Plataforma principal**: Arch Linux (pode funcionar em outras distribuições Linux com ajustes)
 
-\*\*The author and contributors assume no responsibility or liability for any misuse of this software.\*\*
+🤝 **Comunidade**: Contribuições para melhorias são incentivadas!
 
-By using this tool, you agree that you are solely responsible for your actions.
+---
 
-\---
+## 📦 Dependências
 
-\## Overview
+### Pacote necessário:
+- `aircrack-ng`
 
-\*\*WifiTestTool\*\* is a Bash script designed to automate parts of the Wi-Fi WPA2 handshake capture and cracking process, leveraging the \`aircrack-ng\` suite.
+O script tenta a instalação automática via `yay`. Se isso falhar, instale manualmente:
 
-This tool was developed primarily with Arch Linux users in mind but may work on other Linux distributions with minimal adjustments.
-
-Community contributions for compatibility improvements and feature enhancements are highly encouraged.
-
-\---
-
-\## Dependencies
-
-\- \`aircrack-ng\` package must be installed.
-
-The script attempts to install \`aircrack-ng\` automatically via \`yay\`.
-
-If this fails, please install manually using your package manager, for example:
-
-\`\`\`bash
-
+```bash
 sudo pacman -S aircrack-ng
+```
 
-Installation and Usage
+## 🔍 Utilização
 
-Clone the repository or download the script.
+Basta fazer git clone ao repositório e após isso executar um terminal dentro da pasta onde se encontra o script
 
-Make the script executable:
+dar lhe permissões para ser executado através do comando
 
+```bash
 chmod +x wifitesttool.sh
+```
 
-Open a terminal in the same directory as the script.
+Após isso execute-o sem permisões de root através do seguinte comando:
 
-Run the script without root privileges:
-
+```bash
 ./wifitesttool.sh
+```
 
-Usage Instructions
+Em caso de algum erro durante o script recomendamos que utilize este comando para voltar a tornar a placa de rede utilizável, ou se preferir reinicie o dispositivo
 
-The script will prompt you to enter your Wi-Fi interface name (e.g., wlan0).
-
-It will enable monitor mode on the interface and guide you step-by-step through capturing handshakes and attempting to crack them.
-
-Follow all prompts carefully.
-
-The tool requires manual input for certain steps such as selecting target BSSID, channel, and station MAC address.
-
-Troubleshooting
-
-If your Wi-Fi interface becomes unresponsive or inactive after running the tool, you can restore it by running:
-
-sudo airmon-ng stop wlan0mon
-
+```bash
+sudo airmon-ng stop wlan0mon (substituindo pela sua placa +mon no fim)
 sudo systemctl restart NetworkManager
+```
 
-Replace wlan0mon with your actual interface name appended with mon.
+## Contribuições
 
-Contributing
+Contribuições, relatórios de bugs e solicitações de recursos são bem-vindos.
+Abra um problema ou envie um pull request para ajudar a melhorar o WifiTestTool.
+Licença e Responsabilidade
 
-Contributions, bug reports, and feature requests are welcome.
+## 📜 Aviso Legal / Isenção de Responsabilidade
 
-Please open an issue or submit a pull request to help improve WifiTestTool.
+Esta ferramenta é fornecida "no estado em que se encontra", sem quaisquer garantias. Use de forma responsável e legal.
+Não use em redes não autorizadas.
 
-License and Responsibility
-
-This tool is provided "as-is" without any warranties. Use responsibly and legally.
-
-Do not use against unauthorized networks.
-
-Developed and maintained by Vasco Gavino.
+🔧 Desenvolvido e mantido por Vasco Gavino.
